@@ -15,7 +15,6 @@
       tabstop = 2;
       shiftwidth = 2;
       mouse = "a";
-      background = "dark";
     };
 
     colorschemes.gruvbox.enable = true;
@@ -24,14 +23,14 @@
     globals.mapleader = "\\";
 
     keymaps = [
-    {
-      action = "<cmd>Telescope live_grep<CR>";
-      key = "<leader>g";
-    }
+      {
+        action = "<cmd>Telescope live_grep<CR>";
+        key = "<leader>g";
+      }
     ];
 
     extraPlugins = with pkgs.vimPlugins; [
-	    vim-prettier 
+      vim-prettier
     ];
 
     plugins = {
@@ -39,6 +38,8 @@
       neo-tree.enable = true;
       bufferline.enable = true;
       nix.enable = true;
+      treesitter.enable = true;
+      telescope.enable = true;
 
       lsp = {
         enable = true;
@@ -63,30 +64,30 @@
         enable = true;
         autoEnableSources = true;
         sources = [
-        {name = "nvim_lsp";}
-        {name = "path";}
-        {name = "buffer";}
-        {name = "luasnip";}
+          {name = "nvim_lsp";}
+          {name = "path";}
+          {name = "buffer";}
+          {name = "luasnip";}
         ];
 
         mapping = {
           "<CR>" = "cmp.mapping.confirm({ select = true })";
           "<Tab>" = {
             action = ''
-              function(fallback)
+            function(fallback)
               if cmp.visible() then
                 cmp.select_next_item()
-                  elseif luasnip.expandable() then
-                  luasnip.expand()
-                  elseif luasnip.expand_or_jumpable() then
-                  luasnip.expand_or_jump()
-                  elseif check_backspace() then
-                  fallback()
+              elseif luasnip.expandable() then
+                luasnip.expand()
+              elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+              elseif check_backspace() then
+                fallback()
               else
                 fallback()
-                  end
-                  end
-                  '';
+              end
+            end
+            '';
             modes = [ "i" "s" ];
           };
         };
