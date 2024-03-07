@@ -44,6 +44,7 @@
       nix.enable = true;
       treesitter.enable = true;
       telescope.enable = true;
+      comment-nvim.enable = true;
 
       lsp = {
         enable = true;
@@ -64,14 +65,16 @@
         };
       };
 
+      cmp-nvim-lsp.enable = true;
+      cmp-path.enable = true;
+      cmp-buffer.enable = true;
+
       nvim-cmp = {
         enable = true;
-        autoEnableSources = true;
         sources = [
           {name = "nvim_lsp";}
           {name = "path";}
           {name = "buffer";}
-          {name = "luasnip";}
         ];
 
         mapping = {
@@ -81,12 +84,18 @@
             function(fallback)
               if cmp.visible() then
                 cmp.select_next_item()
-              elseif luasnip.expandable() then
-                luasnip.expand()
-              elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-              elseif check_backspace() then
+              else
                 fallback()
+              end
+            end
+            '';
+            modes = [ "i" "s" ];
+          };
+          "<S-Tab>" = {
+            action = ''
+            function(fallback)
+              if cmp.visible() then
+                cmp.select_prev_item()
               else
                 fallback()
               end
