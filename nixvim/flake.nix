@@ -23,7 +23,6 @@
     perSystem = {
       pkgs,
       system,
-      defShells,
       ...
     }: let
       nixvimLib = nixvim.lib.${system};
