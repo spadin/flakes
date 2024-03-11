@@ -201,11 +201,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-cMKeBJUMldo2cOk5gobzlTmZgob89Tjwsfnl77dc0y8=",
-        "path": "/nix/store/z8a6nrlfxj4glkyi4ifghflkdgj4myfq-source/nixvim",
+        "path": "/nix/store/hs642wibkxgnacdd9vnrgxcsncs2ai5f-source/nixvim",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/z8a6nrlfxj4glkyi4ifghflkdgj4myfq-source/nixvim",
+        "path": "/nix/store/hs642wibkxgnacdd9vnrgxcsncs2ai5f-source/nixvim",
         "type": "path"
       }
     },
