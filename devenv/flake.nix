@@ -40,24 +40,14 @@
       inputs',
       ...
     }: let
-      # system = "aarch64-darwin"; # "x86_64-linux"
-      # pkgs = pkgs.legacyPackages.${system};
       nvim = inputs'.nixvim.packages.default;
       tmux = inputs'.tmux.packages.default;
       cowsay = pkgs.cowsay;
-      # config = {
-      #   config = {
-      #     shortcut = "a";
-      #   };
-      # };
     in
     {
-      # devShells.${system}.default = nvim.devShells;
-
       packages = {
+        inherit cowsay nixvim tmux;
         default = nvim;
-        cowsay = pkgs.cowsay;
-        tmux = tmux;
       };
 
       devShells.default = pkgs.mkShell {
