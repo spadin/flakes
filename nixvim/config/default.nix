@@ -40,7 +40,7 @@
     plugins = {
       lualine.enable = true;
       neo-tree.enable = true;
-      bufferline.enable = true;
+      barbar.enable = true;
       nix.enable = true;
       treesitter.enable = true;
       telescope.enable = true;
