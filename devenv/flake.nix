@@ -3,13 +3,22 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    mynixvim.url = "../nixvim/";
     flake-parts.url = "github:hercules-ci/flake-parts";
+
+    nixvim = {
+      url = "../nixvim/";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    tmux = {
+      url = "../tmux/";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     nixpkgs,
-    mynixvim,
+    nixvim,
     flake-parts,
     ...
   } @ inputs:
@@ -33,9 +42,9 @@
     }: let
       # system = "aarch64-darwin"; # "x86_64-linux"
       # pkgs = pkgs.legacyPackages.${system};
-      nvim = inputs'.mynixvim.packages.default;
+      nvim = inputs'.nixvim.packages.default;
+      tmux = inputs'.tmux.packages.default;
       cowsay = pkgs.cowsay;
-      tmux = pkgs.tmux;
       # config = {
       #   config = {
       #     shortcut = "a";
@@ -45,30 +54,14 @@
     {
       # devShells.${system}.default = nvim.devShells;
 
-      tmux-overlays = {
-        config = {
-          shortcut = "a";
-        };
-      };
-
       packages = {
         default = nvim;
         cowsay = pkgs.cowsay;
         tmux = tmux;
       };
 
-      overlayAttrs = final: prev: {
-        tmux = prev.tmux.override {
-          shortcut = "a";
-        };
-      };
-
       devShells.default = pkgs.mkShell {
         buildInputs = [nvim cowsay tmux];
-
-        shellHook = ''
-          tmux new-session -s devenv
-        '';
       };
     };
   };
