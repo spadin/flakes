@@ -3,17 +3,16 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
     tmux-gruvbox = {
       url = "github:egel/tmux-gruvbox";
       flake = false;
     };
   };
 
-  outputs = { nixpkgs, flake-utils, tmux-gruvbox, ... } @ inputs:
-  flake-utils.lib.eachDefaultSystem (system:
+  outputs = { nixpkgs, tmux-gruvbox, ... } @ inputs:
   let
-    pkgs = import nixpkgs { inherit system; };
+    system = "aarch64-darwin";
+    pkgs = nixpkgs.legacyPackages.${system};
     tmux-gruvbox-light-conf = builtins.readFile ''${tmux-gruvbox}/tmux-gruvbox-light.conf'';
     local-tmux-conf = builtins.readFile ./tmux.conf;
 
@@ -32,17 +31,13 @@
     };
   in
   {
-    packages = {
+    packages.${system} = {
       default = tmux;
     };
 
-    devShells.default = pkgs.mkShell {
+    devShells.${system}.default = pkgs.mkShell {
       name = "tmux shell";
       packages = with pkgs; [ tmux ];
-
-      # shellHook = ''
-      #   alias tmux="tmux -f ${tmux-conf}/etc/tmux.conf"
-      # '';
     };
-  });
+  };
 }
