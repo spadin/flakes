@@ -39,7 +39,10 @@
 
     plugins = {
       lualine.enable = true;
-      neo-tree.enable = true;
+      neo-tree = {
+        enable = true;
+        filesystem.filteredItems.showHiddenCount = false;
+      };
       barbar.enable = true;
       nix.enable = true;
       treesitter.enable = true;
