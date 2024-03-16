@@ -40,14 +40,16 @@
       inputs',
       ...
     }: let
-      nvim = inputs'.nixvim.packages.default;
-      tmux = inputs'.tmux.packages.default;
+      nvim   = inputs'.nixvim.packages.default;
+      tmux   = inputs'.tmux.packages.default;
       cowsay = pkgs.cowsay;
+      bash   = pkgs.bash;
+      zsh    = pkgs.zsh;
     in
     {
       packages = {
-        inherit cowsay nixvim tmux;
-        default = nvim;
+        inherit cowsay nixvim tmux bash zsh;
+        default = bash;
       };
 
       devShells.default = pkgs.mkShell {
