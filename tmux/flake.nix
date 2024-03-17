@@ -34,10 +34,5 @@
     packages.${system} = {
       default = tmux;
     };
-
-    devShells.${system}.default = pkgs.mkShell {
-      name = "tmux shell";
-      packages = with pkgs; [ tmux ];
-    };
   };
 }
