@@ -51,7 +51,6 @@
 
         shellHook = ''
           export SHELL="${bash.outPath}/bin/bash"
-          ${bash.outPath}/bin/bash
         '';
       };
     };
