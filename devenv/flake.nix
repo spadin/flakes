@@ -36,20 +36,23 @@
       inputs',
       ...
     }: let
-      nvim   = inputs'.nixvim.packages.default;
-      tmux   = inputs'.tmux.packages.default;
-      cowsay = pkgs.cowsay;
-      bash   = pkgs.bash;
-      zsh    = pkgs.zsh;
+      nvim = inputs'.nixvim.packages.default;
+      tmux = inputs'.tmux.packages.default;
+      bash = pkgs.bashInteractive;
     in
     {
       packages = {
-        inherit cowsay nixvim tmux bash zsh;
-        default = bash;
+        inherit nixvim tmux bash;
+        default = tmux;
       };
 
       devShells.default = pkgs.mkShell {
-        buildInputs = [nvim cowsay tmux];
+        buildInputs = [nvim tmux bash];
+
+        shellHook = ''
+          export SHELL="${bash.outPath}/bin/bash"
+          ${bash.outPath}/bin/bash
+        '';
       };
     };
   };
