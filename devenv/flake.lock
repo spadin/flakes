@@ -407,14 +407,20 @@
         "tmux-gruvbox": "tmux-gruvbox"
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-FosButUBQSTqNGDOntLVJxlElI8sQdO2Qf+qpbv56r0=",
-        "path": "/nix/store/1gm6zcxqwcz6xc49xr5wk7h01pkazmnv-source/tmux",
-        "type": "path"
+        "dir": "tmux",
+        "lastModified": 1710646319,
+        "narHash": "sha256-Idh+At68kTEv9OJrARnuSY80ALHa0zWNxXbYH5ojzFI=",
+        "owner": "spadin",
+        "repo": "flakes",
+        "rev": "a7d2fc6c5a3ce85200805facc9d16401b4c17cc4",
+        "type": "github"
       },
       "original": {
-        "path": "/nix/store/1gm6zcxqwcz6xc49xr5wk7h01pkazmnv-source/tmux",
-        "type": "path"
+        "dir": "tmux",
+        "owner": "spadin",
+        "ref": "main",
+        "repo": "flakes",
+        "type": "github"
       }
     },
     "tmux-gruvbox": {
