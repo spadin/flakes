@@ -33,10 +33,6 @@
       }
     ];
 
-    extraPlugins = with pkgs.vimPlugins; [
-      vim-prettier
-    ];
-
     plugins = {
       lualine.enable = true;
       neo-tree = {
@@ -48,6 +44,7 @@
       treesitter.enable = true;
       telescope.enable = true;
       comment-nvim.enable = true;
+      lsp-format.enable = true;
 
       lsp = {
         enable = true;
