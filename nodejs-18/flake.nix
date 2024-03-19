@@ -22,10 +22,6 @@
     };
     nodejs = old-pkgs.nodejs_18;
   in {
-    env = {
-      NIXPKGS_ALLOW_INSECURE = 1;
-    };
-
     packages = {
       default = nodejs;
     };
