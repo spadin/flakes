@@ -71,41 +71,36 @@
       cmp-path.enable = true;
       cmp-buffer.enable = true;
 
-      nvim-cmp = {
+      cmp = {
         enable = true;
-        sources = [
-          {name = "nvim_lsp";}
-          {name = "path";}
-          {name = "buffer";}
-        ];
-
-        mapping = {
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
-          "<Tab>" = {
-            action = ''
-            function(fallback)
-              if cmp.visible() then
-                cmp.select_next_item()
-              else
-                fallback()
-              end
-            end
-            '';
-            modes = [ "i" "s" ];
-          };
-          "<S-Tab>" = {
-            action = ''
-            function(fallback)
-              if cmp.visible() then
-                cmp.select_prev_item()
-              else
-                fallback()
-              end
-            end
-            '';
-            modes = [ "i" "s" ];
-          };
-        };
+        #
+        # mapping = {
+        #   "<CR>" = "cmp.mapping.confirm({ select = true })";
+        #   "<Tab>" = {
+        #     action = ''
+        #     function(fallback)
+        #       if cmp.visible() then
+        #         cmp.select_next_item()
+        #       else
+        #         fallback()
+        #       end
+        #     end
+        #     '';
+        #     modes = [ "i" "s" ];
+        #   };
+        #   "<S-Tab>" = {
+        #     action = ''
+        #     function(fallback)
+        #       if cmp.visible() then
+        #         cmp.select_prev_item()
+        #       else
+        #         fallback()
+        #       end
+        #     end
+        #     '';
+        #     modes = [ "i" "s" ];
+        #   };
+        # };
       };
     };
   };
