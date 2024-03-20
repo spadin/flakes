@@ -40,6 +40,8 @@
         filesystem.filteredItems.showHiddenCount = false;
       };
       barbar.enable = true;
+      barbar.keymaps.next = "gt";
+      barbar.keymaps.previous = "gT";
       nix.enable = true;
       treesitter.enable = true;
       telescope.enable = true;
