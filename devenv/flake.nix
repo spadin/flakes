@@ -5,12 +5,10 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
 
-    # nixvim.url = "github:spadin/flakes?ref=main&dir=nixvim";
-    nixvim.url = "../nixvim/";
+    nixvim.url = "github:spadin/flakes?ref=main&dir=nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
-    # tmux.url = "github:spadin/flakes?ref=main&dir=tmux";
-    tmux.url = "../tmux/";
+    tmux.url = "github:spadin/flakes?ref=main&dir=tmux";
     tmux.inputs.nixpkgs.follows = "nixpkgs";
   };
 
