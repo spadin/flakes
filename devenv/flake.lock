@@ -291,20 +291,14 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "dir": "nixvim",
-        "lastModified": 1710960108,
-        "narHash": "sha256-sJLpGAt0Xs6PjtHnEJub6FlcwjhmHeMg7J8XRh2onPg=",
-        "owner": "spadin",
-        "repo": "flakes",
-        "rev": "838e9883a13e58e16a4f2ef61984925d51b845ac",
-        "type": "github"
+        "lastModified": 1,
+        "narHash": "sha256-JOUksswrpbkcS1RjyPYOOxMsYuCO+dTEvCFzcsX8vYg=",
+        "path": "/nix/store/nppvrbf4a3j8wfdvik55zfl7m6sdrvdm-source/nixvim",
+        "type": "path"
       },
       "original": {
-        "dir": "nixvim",
-        "owner": "spadin",
-        "ref": "main",
-        "repo": "flakes",
-        "type": "github"
+        "path": "/nix/store/nppvrbf4a3j8wfdvik55zfl7m6sdrvdm-source/nixvim",
+        "type": "path"
       }
     },
     "nixvim_2": {
@@ -407,20 +401,14 @@
         "tmux-gruvbox": "tmux-gruvbox"
       },
       "locked": {
-        "dir": "tmux",
-        "lastModified": 1710960108,
-        "narHash": "sha256-sJLpGAt0Xs6PjtHnEJub6FlcwjhmHeMg7J8XRh2onPg=",
-        "owner": "spadin",
-        "repo": "flakes",
-        "rev": "838e9883a13e58e16a4f2ef61984925d51b845ac",
-        "type": "github"
+        "lastModified": 1,
+        "narHash": "sha256-m6OVSxtdpu20lWzILYc63QGjD7SWG3Bbml/A3Zqp4eI=",
+        "path": "/nix/store/nppvrbf4a3j8wfdvik55zfl7m6sdrvdm-source/tmux",
+        "type": "path"
       },
       "original": {
-        "dir": "tmux",
-        "owner": "spadin",
-        "ref": "main",
-        "repo": "flakes",
-        "type": "github"
+        "path": "/nix/store/nppvrbf4a3j8wfdvik55zfl7m6sdrvdm-source/tmux",
+        "type": "path"
       }
     },
     "tmux-gruvbox": {

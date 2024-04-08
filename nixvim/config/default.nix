@@ -47,9 +47,18 @@
       telescope.enable = true;
       comment-nvim.enable = true;
       lsp-format.enable = true;
+      refactoring.enable = true;
 
       lsp = {
         enable = true;
+
+        keymaps.lspBuf = {
+          K = "hover";
+          gD = "references";
+          gd = "definition";
+          gi = "implementation";
+          gt = "type_definition";
+        };
 
         servers = {
           tsserver.enable = true;
@@ -70,38 +79,7 @@
       cmp-nvim-lsp.enable = true;
       cmp-path.enable = true;
       cmp-buffer.enable = true;
-
-      cmp = {
-        enable = true;
-        #
-        # mapping = {
-        #   "<CR>" = "cmp.mapping.confirm({ select = true })";
-        #   "<Tab>" = {
-        #     action = ''
-        #     function(fallback)
-        #       if cmp.visible() then
-        #         cmp.select_next_item()
-        #       else
-        #         fallback()
-        #       end
-        #     end
-        #     '';
-        #     modes = [ "i" "s" ];
-        #   };
-        #   "<S-Tab>" = {
-        #     action = ''
-        #     function(fallback)
-        #       if cmp.visible() then
-        #         cmp.select_prev_item()
-        #       else
-        #         fallback()
-        #       end
-        #     end
-        #     '';
-        #     modes = [ "i" "s" ];
-        #   };
-        # };
-      };
+      cmp.enable = true;
     };
   };
 }
