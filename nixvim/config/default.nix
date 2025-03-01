@@ -61,8 +61,6 @@
         };
 
         servers = {
-          tsserver.enable = true;
-
           lua-ls = {
             enable = true;
             settings.telemetry.enable = false;
@@ -72,6 +70,10 @@
             enable = true;
             installCargo = true;
             installRustc = true;
+          };
+
+          tsserver = {
+            enable = true;
           };
         };
       };
