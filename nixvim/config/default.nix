@@ -20,7 +20,7 @@
     colorschemes.gruvbox.enable = true;
     vimAlias = true;
 
-    globals.mapleader = "\\";
+    globals.mapleader = ",";
 
     keymaps = [
       {
